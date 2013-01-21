@@ -4,7 +4,7 @@ sudo gpg --keyserver  hkp://keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
 sudo gpg -a --export CD2EFD2A | sudo apt-key add -
 if grep -Fxq "repo.percona.com/apt" "/etc/apt/sources.list"
 then
-    # code if found
+    echo "Source exist."
 else
     sudo echo -e "\ndeb http://repo.percona.com/apt precise main" >> "/etc/apt/sources.list"
     sudo echo -e "\ndeb-src http://repo.percona.com/apt precise main" >> "/etc/apt/sources.list"
