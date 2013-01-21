@@ -2,6 +2,7 @@
 
 sudo apt-get update && sudo apt-get install aptitude
 sudo aptitude update && sudo aptitude upgrade
+sudo aptitude remove libavcodec53 libavutil51
 sudo aptitude install ubuntu-restricted-extras ubuntu-restricted-addons \
     bmon vim vlc ntp ntpdate unzip bzip2 filezilla k3b libdvdread4 flac \
     tasksel gcc g++ dpkg-dev smplayer gimp inkscape imagemagick python-gpgme \
