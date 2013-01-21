@@ -2,9 +2,15 @@
 
 sudo gpg --keyserver  hkp://keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
 sudo gpg -a --export CD2EFD2A | sudo apt-key add -
-sudo apt-get update
+if grep -Fxq "repo.percona.com/apt" "/etc/apt/sources.list"
+then
+    # code if found
+else
+    sudo echo -e "\ndeb http://repo.percona.com/apt precise main" >> "/etc/apt/sources.list"
+    sudo echo -e "\ndeb-src http://repo.percona.com/apt precise main" >> "/etc/apt/sources.list"
+fi
 sudo aptitude update
-sudo apt-get install percona-server-server-5.5 percona-server-client-5.5 tinyca
+sudo aptitude install percona-server-server-5.5 percona-server-client-5.5 tinyca
 sudo aptitude install apache2 apache2.2-common apache2-doc apache2-mpm-worker \
     apache2-utils libexpat1 ssl-cert php5 php5-common php5-gd \
     php5-mysql php5-imap phpmyadmin php5-cli php5-cgi libapache2-mod-fcgid apache2-suexec \
