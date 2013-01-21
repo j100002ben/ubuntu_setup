@@ -19,6 +19,7 @@ sudo aptitude install apache2 apache2.2-common apache2-doc apache2-mpm-worker \
     php-soap php5-dev autoconf2.13 autoconf-archive gnu-standards autoconf-doc libtool-doc \
     php-db php5-sqlite php-mdb2 php5-xcache libapache2-mod-fastcgi php5-fpm php5-curl \
     php5-xdebug php5-xmlrpc php5-cli php5-imagick php5-memcached sendmail
+sudo sendmailconfig
 sudo a2enmod suexec rewrite ssl actions include headers dav_fs dav auth_digest actions fastcgi alias
 sudo a2ensite default-ssl
 sudo service apache2 restart
