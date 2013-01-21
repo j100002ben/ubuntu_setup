@@ -2,8 +2,9 @@
 
 sudo gpg --keyserver  hkp://keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
 sudo gpg -a --export CD2EFD2A | sudo apt-key add -
+sudo apt-get update
 sudo aptitude update
-sudo aptitude install percona-server-server-5.5 percona-server-client-5.5 tinyca
+sudo apt-get install percona-server-server-5.5 percona-server-client-5.5 tinyca
 sudo aptitude install apache2 apache2.2-common apache2-doc apache2-mpm-worker \
     apache2-utils libexpat1 ssl-cert php5 php5-common php5-gd \
     php5-mysql php5-imap phpmyadmin php5-cli php5-cgi libapache2-mod-fcgid apache2-suexec \
